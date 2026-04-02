@@ -1,0 +1,73 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "1120c664c252f4891270",
+  "position": {
+    "x": 420.07358351729209,
+    "y": 140.33848417954377,
+    "z": 0,
+    "height": 323.06107431935243,
+    "width": 421.01545253863134
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "autoSelectVisualType": true,
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimBranch"
+                    }
+                  },
+                  "Property": "Branch"
+                }
+              },
+              "queryRef": "DimBranch.Branch",
+              "nativeQueryRef": "Branch"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Modelmeasures"
+                    }
+                  },
+                  "Property": "Budget"
+                }
+              },
+              "queryRef": "Modelmeasures.Budget",
+              "nativeQueryRef": "Budget"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Modelmeasures"
+                  }
+                },
+                "Property": "Budget"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

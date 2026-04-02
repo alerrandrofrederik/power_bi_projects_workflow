@@ -1,0 +1,25 @@
+table Modelmeasures
+	lineageTag: b8f26c9c-ce33-4443-ae6f-15ddfe29a610
+
+	measure Budget = SUM(FactBudgetActual[BudgetAmount])
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: b7f1da1b-9dc9-4e1a-843f-9351f3256729
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column Value
+		isHidden
+		formatString: 0
+		lineageTag: b0440f76-0955-42e1-ba0a-35f8ac122a72
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Modelmeasures = calculated
+		mode: import
+		source = {0}
+
+	annotation PBI_Id = c1b2d7fdf5c7469d88dbd98657946353
+

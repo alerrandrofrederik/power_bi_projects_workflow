@@ -29,6 +29,7 @@ ref table DimAccountGroup
 ref table DimBranch
 ref table DimDate
 ref table FactBudgetActual
+ref table Modelmeasures
 
 ref cultureInfo en-US
 
