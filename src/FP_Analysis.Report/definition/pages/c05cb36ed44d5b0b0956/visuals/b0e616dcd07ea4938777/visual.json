@@ -1,0 +1,73 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "b0e616dcd07ea4938777",
+  "position": {
+    "x": 358.23376623376623,
+    "y": 113.87012987012987,
+    "z": 0,
+    "height": 393.97402597402595,
+    "width": 423.89610389610391
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "autoSelectVisualType": true,
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimAccountGroup"
+                    }
+                  },
+                  "Property": "AccountGroup"
+                }
+              },
+              "queryRef": "DimAccountGroup.AccountGroup",
+              "nativeQueryRef": "AccountGroup"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MyMeasures"
+                    }
+                  },
+                  "Property": "Actual"
+                }
+              },
+              "queryRef": "MyMeasures.Actual",
+              "nativeQueryRef": "Actual"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "MyMeasures"
+                  }
+                },
+                "Property": "Actual"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
