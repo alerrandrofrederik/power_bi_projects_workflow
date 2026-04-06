@@ -1,0 +1,25 @@
+table MyMeasures
+	lineageTag: 25befb90-73a9-41cd-81c0-1d95ea663824
+
+	measure Actual = SUM(FactBudgetActual[ActualAmount])
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 144d3c3a-d60a-420b-b522-dd2fcbe4d50b
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column Value
+		isHidden
+		formatString: 0
+		lineageTag: 7bc907a6-8838-485f-9a5d-a6518084a6ec
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition MyMeasures = calculated
+		mode: import
+		source = {0}
+
+	annotation PBI_Id = c307a1b84d794f96876694305cf55498
+

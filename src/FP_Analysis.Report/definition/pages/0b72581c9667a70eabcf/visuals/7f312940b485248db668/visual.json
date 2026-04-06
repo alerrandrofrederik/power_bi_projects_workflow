@@ -1,52 +1,52 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "1120c664c252f4891270",
+  "name": "7f312940b485248db668",
   "position": {
-    "x": 420.07358351729209,
-    "y": 140.33848417954377,
+    "x": 358.23376623376623,
+    "y": 113.87012987012987,
     "z": 0,
-    "height": 323.06107431935243,
-    "width": 421.01545253863134
+    "height": 393.97402597402595,
+    "width": 423.89610389610391
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "pivotTable",
     "autoSelectVisualType": true,
     "query": {
       "queryState": {
-        "Category": {
+        "Rows": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimBranch"
+                      "Entity": "DimAccountGroup"
                     }
                   },
-                  "Property": "Branch"
+                  "Property": "AccountGroup"
                 }
               },
-              "queryRef": "DimBranch.Branch",
-              "nativeQueryRef": "Branch",
+              "queryRef": "DimAccountGroup.AccountGroup",
+              "nativeQueryRef": "AccountGroup",
               "active": true
             }
           ]
         },
-        "Y": {
+        "Values": {
           "projections": [
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Modelmeasures"
+                      "Entity": "MyMeasures"
                     }
                   },
-                  "Property": "Budget"
+                  "Property": "Actual"
                 }
               },
-              "queryRef": "Modelmeasures.Budget",
-              "nativeQueryRef": "Budget"
+              "queryRef": "MyMeasures.Actual",
+              "nativeQueryRef": "Actual"
             }
           ]
         }
@@ -58,10 +58,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Modelmeasures"
+                    "Entity": "MyMeasures"
                   }
                 },
-                "Property": "Budget"
+                "Property": "Actual"
               }
             },
             "direction": "Descending"
