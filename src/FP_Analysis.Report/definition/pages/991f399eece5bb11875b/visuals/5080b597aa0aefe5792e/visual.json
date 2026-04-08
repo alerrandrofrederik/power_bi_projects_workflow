@@ -1,19 +1,18 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "b0e616dcd07ea4938777",
+  "name": "5080b597aa0aefe5792e",
   "position": {
-    "x": 358.23376623376623,
-    "y": 113.87012987012987,
+    "x": 358.43993759750396,
+    "y": 113.82215288611546,
     "z": 0,
-    "height": 393.97402597402595,
-    "width": 423.89610389610391
+    "height": 394.38377535101409,
+    "width": 801.74726989079568
   },
   "visual": {
-    "visualType": "pivotTable",
-    "autoSelectVisualType": true,
+    "visualType": "waterfallChart",
     "query": {
       "queryState": {
-        "Rows": {
+        "Category": {
           "projections": [
             {
               "field": {
@@ -27,13 +26,11 @@
                 }
               },
               "queryRef": "DimAccountGroup.AccountGroup",
-              "nativeQueryRef": "AccountGroup",
-              "active": true
               "nativeQueryRef": "AccountGroup"
             }
           ]
         },
-        "Values": {
+        "Y": {
           "projections": [
             {
               "field": {
@@ -43,11 +40,11 @@
                       "Entity": "MyMeasures"
                     }
                   },
-                  "Property": "Actual"
+                  "Property": "Budget"
                 }
               },
-              "queryRef": "MyMeasures.Actual",
-              "nativeQueryRef": "Actual"
+              "queryRef": "MyMeasures.Budget",
+              "nativeQueryRef": "Budget"
             }
           ]
         }
@@ -56,16 +53,16 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "MyMeasures"
+                    "Entity": "DimAccountGroup"
                   }
                 },
-                "Property": "Actual"
+                "Property": "AccountGroup"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
