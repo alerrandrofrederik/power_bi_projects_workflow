@@ -7,6 +7,12 @@ table MyMeasures
 
 		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
+	measure Budget = SUM(FactBudgetActual[BudgetAmount])
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 5097ec6d-ee29-46f9-bcd2-bbaf0af95d65
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
 	column Value
 		isHidden
 		formatString: 0
