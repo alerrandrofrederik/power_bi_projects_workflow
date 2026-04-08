@@ -29,6 +29,7 @@
               "queryRef": "DimAccountGroup.AccountGroup",
               "nativeQueryRef": "AccountGroup",
               "active": true
+              "nativeQueryRef": "AccountGroup"
             }
           ]
         },
